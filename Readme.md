@@ -15,10 +15,10 @@ I found in my own biking trips, that when I go up a steep road for a bit and the
 
 ## Research Questions
 <ul>
-  <li>When a road-biker goes up a hill, how does their speed change on the next ‘flat’ stretch?<\li>
-  <li>How much ‘steepness’ does it take to slow the biker down significantly?<\li>
-  <li>Does this effect get stronger during the same trip? And does it get less over multiple trips?<\li>
-<\ul>
+  <li>When a road-biker goes up a hill, how does their speed change on the next ‘flat’ stretch?</li>
+  <li>How much ‘steepness’ does it take to slow the biker down significantly?</li>
+  <li>Does this effect get stronger during the same trip? And does it get less over multiple trips?</li>
+</ul>
 
 ## Results / products
 From my own experience, I expect that a biker is slowed down initially, but recovers rather quickly after a short, steep bit of road. 
