@@ -221,6 +221,7 @@ bike_gradient <- bike_gradient |>
   )
 
 #removing single FALSE/TRUE values
+# REVIEW AGAIN; JUST TO MAKE SURE IT IS CORRECT
 bike_gradient <- bike_gradient |> 
   mutate(
     steep_up = ifelse(!steep_up, lag(steep_up) & lead(steep_up), steep_up),
@@ -247,14 +248,14 @@ tm_shape(bike_gradient) +
 - exclude downhill segments (if segment mean gradient is <-3)
   - use logic that if neither a downhill not uphill, it's flat
   - and otherwise it's the other
-  - might have to redo the segmentation. First create a column
-  
+  => DONE, in avg_speeds
   
 - analyse difference between segments that follow a steep part and those that preceed it
   - linear regression => make a df with speed difference before and after a steep part, and the steepness of the steep part => lm(diff~steepness)
   - what to do with segments that are both?
 
 
+This creates a new df, with differentiated up/down/flat segments, so that it includes uphill segments and downhill segments.
 ```{r}
 avg_speeds <- bike_gradient |> 
   group_by(segment_id_up, segment_id_down) |> 
@@ -262,11 +263,21 @@ avg_speeds <- bike_gradient |>
     seg_avg = mean(speed),
     uphill = ifelse(all(steep_up), TRUE, FALSE),
     flat = ifelse(all(!steep_up & !steep_down), TRUE, FALSE),
-    downhill = ifelse(all(steep_down), TRUE, FALSE)
+    downhill = ifelse(all(steep_down), TRUE, FALSE),
+    avg_grad = mean(gradient_smooth)
   ) 
   
 ```
 
+```{r}
+tm_shape(avg_speeds)+
+  tm_dots("seg_avg")
+```
+
+-- toDO:
+Linear regression:
+  - calculate speed differences (exclude downhill) of flat segments following steep and flat segments before steepness
+  - regress with gradient
 
 ```{r}
 test <- bike_gradient |> 
