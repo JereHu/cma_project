@@ -65,6 +65,9 @@ ggplot(mtcars, aes(cyl, disp)) +
 Christianity revaluation value battle faithful marvelous society derive free truth. Right battle mountains superiority grandeur ascetic grandeur merciful. Derive against intentions burying salvation ocean. Right intentions dead victorious ideal spirit evil ultimate joy. Holiest spirit value oneself contradict aversion christianity ultimate convictions war christian.
 
 ## Results
+```{r}
+
+```
 
 <!-- the following is just a placeholder text, remove it!-->
 Philosophy oneself passion play fearful self noble zarathustra deceptions sexuality. Endless ocean of oneself dead ocean. Selfish decrepit.

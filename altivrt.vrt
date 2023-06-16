@@ -1,0 +1,1529 @@
+<VRTDataset rasterXSize="34000" rasterYSize="32000">
+  <SRS dataAxisToSRSAxisMapping="1,2">PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.9524055555556],PARAMETER["longitude_of_center",7.43958333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</SRS>
+  <GeoTransform>  2.6640000000000000e+06,  5.0000000000000000e-01,  0.0000000000000000e+00,  1.2590000000000000e+06,  0.0000000000000000e+00, -5.0000000000000000e-01</GeoTransform>
+  <VRTRasterBand dataType="Float32" band="1">
+    <NoDataValue>-9999</NoDataValue>
+    <ColorInterp>Gray</ColorInterp>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2672-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2672-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2673-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2673-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2673-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2674-1243_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="30000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2674-1244_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="28000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2674-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2674-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2674-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2674-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2675-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2675-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2675-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2676-1244_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="28000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2676-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2676-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2676-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2676-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2677-1244_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="28000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2677-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2677-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2678-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2678-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2678-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2678-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2679-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2679-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2679-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2679-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2679-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2680-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="32000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2680-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="32000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2680-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="32000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2019_2680-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="32000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2671-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2672-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2672-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2672-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2672-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2672-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2672-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2673-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2673-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2673-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2673-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2673-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2673-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2673-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2674-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2674-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2674-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2674-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2674-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2674-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2674-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2674-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2674-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="20000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1243_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="30000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1244_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="28000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2675-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="22000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2676-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2676-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2676-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2676-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2676-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2676-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2676-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2676-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2676-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="24000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2677-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2677-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2677-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2677-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2677-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2677-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2677-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2677-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2677-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2677-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="26000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2678-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2678-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2678-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2678-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2678-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2678-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2678-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2678-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="28000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2679-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2679-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2679-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2679-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2679-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2679-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="30000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2680-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="32000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2680-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="32000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2680-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="32000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2020_2680-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="32000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2664-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="0" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2664-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="0" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2665-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="2000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2665-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="2000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2665-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="2000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2665-1258_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="2000" yOff="0" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2666-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="4000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2666-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="4000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2666-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="4000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2666-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="4000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2666-1258_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="4000" yOff="0" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2667-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="6000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2667-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="6000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2667-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="6000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2667-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="6000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2667-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="6000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2667-1258_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="6000" yOff="0" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1244_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="28000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2668-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="8000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1244_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="28000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2669-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="10000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1243_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="30000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1244_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="28000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2670-1257_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="12000" yOff="2000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1243_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="30000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1244_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="28000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1250_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="16000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1251_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="14000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1252_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="12000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1253_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="10000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1254_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="8000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1255_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="6000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2671-1256_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="14000" yOff="4000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2672-1243_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="30000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2672-1244_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="28000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2672-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2672-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2672-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2672-1248_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="20000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2672-1249_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="16000" yOff="18000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2673-1243_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="30000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2673-1244_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="28000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2673-1245_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="26000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2673-1246_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="24000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Karib\OneDrive\UZH\GEO Master Modules\Frü23\GEO880 Computational Movement Analysis\Excercises\semester_project\cma_project\datasets/alti3d_05/swissalti3d_2021_2673-1247_0.5_2056_5728.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2000" RasterYSize="2000" DataType="Float32" BlockXSize="128" BlockYSize="128" />
+      <SrcRect xOff="0" yOff="0" xSize="2000" ySize="2000" />
+      <DstRect xOff="18000" yOff="22000" xSize="2000" ySize="2000" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <OverviewList resampling="nearest">2 4 8</OverviewList>
+</VRTDataset>
