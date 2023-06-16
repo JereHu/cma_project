@@ -80,4 +80,6 @@ Justice convictions spirit sexuality insofar free marvelous joy. Revaluation vir
 
 ## Sources
 
-Tennekes, M., 2018, tmap: Thematic Maps in R, Journal of Statistical Software, 84(6), 1-39, doi: 10.18637/jss.v084.i06
+Parkin, J., Rotheram, J. (2010) Design speeds and acceleration characteristics of bicycle traffic for use in planning, design and appraisal, Transport Policy, Volume 17, Issue 5, Pages 335-341, https://doi.org/10.1016/j.tranpol.2010.03.001.
+
+Tennekes, M. (2018) tmap: Thematic Maps in R, Journal of Statistical Software, 84(6), 1-39, doi: 10.18637/jss.v084.i06

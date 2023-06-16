@@ -174,8 +174,8 @@ tm_shape(bike_filter) +
   tm_dots("speed") 
 ```
 
-add gradient (for each point, calculate height difference to next point, divide by distance to next point and multiply by 100 to get percent). There were some endopints of routes that calculated to 400% gradient. Therefore a filter was set to exclude > +-50% gradients.
-The decision to smooth the gradient with a moving window (+- one point) was made, so that there are not such extreme jumps (max was 40%, min -30%, which is unlikely in the study area).
+add gradient (for each point, calculate height difference to next point, divide by distance to next point and multiply by 100 to get percent). There were some endpoints of routes that calculated to 400% gradient. Therefore a filter was set to exclude > +-50% gradients.
+The decision to smooth the gradient with a moving window (+- one point) was made, so that there are not such extreme jumps (max was still 40%, min -30%, which is unlikely in the study area).
 ```{r}
 bike_gradient <- bike_filter |> 
   mutate(
@@ -186,7 +186,7 @@ bike_gradient <- bike_filter |>
   mutate(
     gradientplus1 = lead(gradient),
     gradientminus1 = lag(gradient)
-  ) |> 
+  ) |>  
   rowwise() |> 
   mutate(
     gradient_smooth = mean(c(gradient, gradientplus1, gradientminus1))
@@ -195,5 +195,33 @@ bike_gradient <- bike_filter |>
 
 tm_shape(bike_gradient) +
   tm_dots("gradient_smooth") 
+
+ggplot(bike_gradient, aes(gradient_smooth)) +
+  geom_histogram(binwidth = 1)
 ```
+
+
+segment data based on gradient (>3%, supported by Parkin et al. 2010, Castro et al. 2022)
+there is not much research on the subject of steepness definition for bikers in GIS. Parkin et al. 2010 did the groundwork, and multiple others rely on their work (Castor et al. 2022, Clarry et al. 2019)
+```{r}
+bike_gradient <- bike_gradient |> 
+  mutate(
+    steep_up = gradient > 3
+  )
+
+rle_id <- function(vec) {
+    x <- rle(vec)$lengths
+    as.factor(rep(seq_along(x), times = x))
+}
+
+bike_gradient <- bike_gradient |>
+    mutate(segment_id = rle_id(steep_up))
+```
+
+```{r}
+tm_shape(bike_gradient) +
+  tm_dots("segment_id") 
+```
+
+
 
