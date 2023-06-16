@@ -22,6 +22,9 @@ output: html
 
 # To apply the setting for all code chunks, add the options to the yaml header of the document (in between the ---) without the preceeding "#|".
 
+# code folding => so that the reader can fold it out seperately
+# https://quarto.org/docs/output-formats/html-code.html 
+
 ```
 
 
