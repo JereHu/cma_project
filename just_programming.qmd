@@ -291,13 +291,27 @@ Linear regression:
   - calculate speed differences (exclude downhill) of flat segments following steep and flat segments before steepness
   - regress with gradient
 
+
+For some reason, there are a lot of missing values when using lead and lag. These missing values are often where the condition is true. WHY?
 ```{r}
 avg_speeds_reg <- avg_speeds |> 
   mutate(
-    before_steep = ifelse(flat&lag(uphill), TRUE, FALSE),
-    after_steep = ifelse(flat&lead(uphill), TRUE, FALSE)
+    before_steep = if_else(flat&lead(uphill), TRUE, FALSE, missing = TRUE),
+    after_steep = if_else(flat&lag(uphill), TRUE, FALSE, missing = TRUE)
   )
 ```
+
+
+create for loop, so that every steep part gets a column where the average speed difference from the part before and the part after is calculated.
+Then take only these columns and put them in a linear regression, with speed diff and steepness of the gradient.
+```{r}
+for(i in 1:nrow(avg_speeds)) {       # for-loop over rows
+  if (avg_speeds[i+1, ]$uphill & avg_speeds[i, ]$flat){
+    avg_speeds[i, ]$after_steep = TRUE
+  }
+}
+```
+
 
 ```{r}
 test <- bike_gradient |> 
