@@ -1,8 +1,11 @@
 ---
 title: The title of your Semesterproject
 subtitle: A subtle subtitle
-author: Firstname1 Lastname1 and Firstname2 Lastname2
+author: Jeremiah Huggel
 output: html
+format:
+  html:
+    code-fold: true
 ---
 
 
@@ -24,6 +27,7 @@ output: html
 
 # code folding => so that the reader can fold it out seperately
 # https://quarto.org/docs/output-formats/html-code.html 
+
 
 ```
 

@@ -21,7 +21,7 @@ Reading in Posmo Data, cropping it so that home location is not shown and filter
 ```{r}
 posmo <- read_delim("datasets/posmo_2023-04-07T00_00_00+02_00-2023-06-02T23_59_59+02_00.csv")
 
-# make sure x and y do not have na values
+# make sure lat and long do not have na values
 posmo<-posmo[!is.na(posmo$lon_x),]
 posmo<-posmo[!is.na(posmo$lat_y),]
 
@@ -47,28 +47,37 @@ poly = st_multipoint(c(p1, p2, p3, p4)) %>%
 # create function that 'cuts' out the area covered by the polygon
 not_covered_by  = function(x, y) !st_covered_by(x, y)
 
-# group weekdays, leave out everything that's not bike data, filter the polygon, also leave out 4-11-2023 and 4-25-2023, because I was at gym only
+#leave out everything that's not bike data, filter the polygon, also leave out 4-11-2023 and 4-25-2023, because that was not a bike tour
 posmo_sf_cut <- posmo_sf |> 
-  group_by("weekday") |>
-  group_by("transport_mode") |>
   filter(transport_mode == "Bike")%>%
   st_filter(poly, .predicate=not_covered_by) |> 
   ungroup() |> 
   filter(datetime > as.Date('2023-04-12') | datetime < as.Date('2023-04-10')) |> 
-  filter(datetime > as.Date('2023-04-26') | datetime < as.Date('2023-04-24'))
+  filter(datetime > as.Date('2023-04-26') | datetime < as.Date('2023-04-24')) |> 
+  mutate(
+    datetime = as.POSIXct(datetime),
+    date = lubridate::date(datetime)
+    ) |> 
+  select(-user_id, -place_name)
 
 # map in ggplot (no background map)
-ggplot(data = posmo_sf_cut)+
-  geom_sf(aes(colour = weekday), alpha = 0.5)+
-  coord_sf(datum = 2056) 
+# ggplot(data = posmo_sf_cut)+
+#   geom_sf(aes(colour = date), alpha = 0.5)+
+#   coord_sf(datum = 2056) 
 
 tmap_mode("view")
 tm_shape(posmo_sf_cut) +
-  tm_dots("weekday") 
+  tm_dots("date") 
 
 ```
 
+```{r}
+head(posmo_sf_cut)
+```
+
 Download DEM from many tifs from swisstopo alti3D (csv)
+
+![Manually Selected area of Interest on swissALTI3D](images/Screenshot_DEM_selection.jpg)
 ```{r}
 
 #csv has all download paths from alti3d tiles  https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html 
@@ -120,30 +129,20 @@ posmo_sf_cut$height <- DEM$altivrt
 
 Plotting it.
 ```{r}
-ggplot() +
-  geom_sf(data = posmo_sf_cut, aes(colour = height), alpha = .3) + 
-  coord_sf(datum = 2056)
-
 tm_shape(posmo_sf_cut) +
   tm_dots("height") 
 ```
 
-time to posix, to make sure I'm able to group
-```{r}
-posmo_sf_cut$datetime <- as.POSIXct(posmo_sf_cut$datetime)
-```
 
-temporal window, need N and E, take that from geometry column, add a grouping column date, use lead and lag to compute euclidian distances (which works thanks to Swiss Coordinate system)
 ```{r}
+# temporal window, need N and E, take that from geometry column, add a grouping column date, use lead and lag to compute euclidian distances (which works thanks to Swiss Coordinate system)
 bike <- posmo_sf_cut |>
   mutate(E = st_coordinates(geometry)[,1]) |> 
   mutate(N = st_coordinates(geometry)[,2]) |> 
-  group_by(date = lubridate::date(datetime)) |> 
+  group_by(date) |> 
     mutate(
-        nMinus2 = sqrt((lag(N, 2) - N)^2 + (lag(E, 2) - E)^2), # distance to pos -20 sec
         nMinus1 = sqrt((lag(N, 1) - N)^2 + (lag(E, 1) - E)^2), # distance to pos -10 sec
         nPlus1  = sqrt((N - lead(N, 1))^2 + (E - lead(E, 1))^2), # distance to pos +10 sec
-        nPlus2  = sqrt((N - lead(N, 2))^2 + (E - lead(E, 2))^2) # distance to pos +20 sec
     ) |> 
   ungroup()
 ```
@@ -159,14 +158,20 @@ bike <- bike |>
 stops, defined as the current and next speed is <1 km/h, it is a stop (determined from a quick look at the speed data. a.k.a 20 secs with < 1km/h is stop)
 
 ```{r}
+testspeed <- bike |> 
+  filter(speed < 1)
+```
+
+
+```{r}
 bike <- bike |>
     ungroup() |>
-    mutate(static = (speed + lead(speed))/2 < 1)
+    mutate(static = ifelse((speed + lead(speed) + lag(speed))/3 < 1, TRUE, nPlus1 < 2 | nMinus1 < 2))
 
 bike |>
   ggplot(aes(E, N)) +
   geom_path() +
-  geom_point(aes(color = static)) +
+  geom_point(aes(color = static), alpha = 0.3) +
   coord_fixed()
 
 ```
@@ -181,6 +186,9 @@ tm_shape(bike_filter) +
 
 add gradient (for each point, calculate height difference to next point, divide by distance to next point and multiply by 100 to get percent). There were some endpoints of routes that calculated to 400% gradient. Therefore a filter was set to exclude > +-50% gradients.
 The decision to smooth the gradient with a moving window (+- one point) was made, so that there are not such extreme jumps (max was still 40%, min -30%, which is unlikely in the study area).
+![Graphical representation for gradient of point A. Gradient m = x/y * 100. Where x is the distance to the next point, y is the height difference between the points.](images/slope.png)
+
+
 ```{r}
 bike_gradient <- bike_filter |> 
   mutate(
@@ -202,8 +210,11 @@ bike_gradient <- bike_filter |>
 
 ```{r}
 tm_shape(bike_gradient) +
-  tm_dots("gradient_smooth") 
+  tm_dots("gradient_smooth")
+```
 
+This led to the following distribution which seems reasonable.
+```{r}
 ggplot(bike_gradient, aes(gradient_smooth)) +
   geom_histogram(binwidth = 1)
 ```
@@ -248,7 +259,7 @@ tm_shape(bike_gradient) +
 - exclude downhill segments (if segment mean gradient is <-3)
   - use logic that if neither a downhill not uphill, it's flat
   - and otherwise it's the other
-  => DONE, in avg_speeds
+=> DONE, in avg_speeds
   
 - analyse difference between segments that follow a steep part and those that preceed it
   - linear regression => make a df with speed difference before and after a steep part, and the steepness of the steep part => lm(diff~steepness)
@@ -266,7 +277,8 @@ avg_speeds <- bike_gradient |>
     downhill = ifelse(all(steep_down), TRUE, FALSE),
     avg_grad = mean(gradient_smooth)
   ) 
-  
+
+head(avg_speeds)
 ```
 
 ```{r}
@@ -278,6 +290,14 @@ tm_shape(avg_speeds)+
 Linear regression:
   - calculate speed differences (exclude downhill) of flat segments following steep and flat segments before steepness
   - regress with gradient
+
+```{r}
+avg_speeds_reg <- avg_speeds |> 
+  mutate(
+    before_steep = ifelse(flat&lag(uphill), TRUE, FALSE),
+    after_steep = ifelse(flat&lead(uphill), TRUE, FALSE)
+  )
+```
 
 ```{r}
 test <- bike_gradient |> 
