@@ -1,5 +1,5 @@
 ---
-title: Do cyclists slow down after a steep hill
+title: Do cyclists slow down after they go up a steep hill
 subtitle: A self analysis
 author: Jeremiah Huggel
 bibliography: cmareferences.bib
@@ -8,6 +8,11 @@ format:
   html:
     code-fold: true
 warning: false
+website:
+  sidebar:
+    style: "docked"
+    search: false
+    contents: auto
 ---
 
 
