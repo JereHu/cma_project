@@ -47,17 +47,16 @@ poly = st_multipoint(c(p1, p2, p3, p4)) %>%
 # create function that 'cuts' out the area covered by the polygon
 not_covered_by  = function(x, y) !st_covered_by(x, y)
 
-#leave out everything that's not bike data, filter the polygon, also leave out 4-11-2023 and 4-25-2023, because that was not a bike tour
+#leave out everything that's not bike data, filter the polygon, also leave out 4-11-2023, 4-25-2023 and 4-28-2023, because that was not a bike tour, only very short trips
 posmo_sf_cut <- posmo_sf |> 
   filter(transport_mode == "Bike")%>%
   st_filter(poly, .predicate=not_covered_by) |> 
   ungroup() |> 
-  filter(datetime > as.Date('2023-04-12') | datetime < as.Date('2023-04-10')) |> 
-  filter(datetime > as.Date('2023-04-26') | datetime < as.Date('2023-04-24')) |> 
   mutate(
     datetime = as.POSIXct(datetime),
     date = lubridate::date(datetime)
     ) |> 
+  filter(date != as.Date('2023-04-11') & date != as.Date('2023-04-25') & date != as.Date('2023-04-28')) |> 
   select(-user_id, -place_name)
 
 # map in ggplot (no background map)
@@ -193,7 +192,15 @@ The decision to smooth the gradient with a moving window (+- one point) was made
 bike_gradient <- bike_filter |> 
   mutate(
     gradient = (lead(height)-height)/nPlus1*100
-  ) |> 
+  )
+
+ggplot(bike_gradient, aes(gradient)) +
+  geom_histogram(binwidth = 1)
+```
+
+
+```{r}
+bike_gradient <- bike_gradient |> 
   filter(gradient < 50 ) |> 
   filter(gradient > -50) |> 
   mutate(
@@ -207,17 +214,17 @@ bike_gradient <- bike_filter |>
   ungroup()
 ```
 
+This led to the following distribution which seems reasonable.
+```{r}
+ggplot(bike_gradient, aes(gradient_smooth)) +
+  geom_histogram(binwidth = 1)
+```
 
 ```{r}
 tm_shape(bike_gradient) +
   tm_dots("gradient_smooth")
 ```
 
-This led to the following distribution which seems reasonable.
-```{r}
-ggplot(bike_gradient, aes(gradient_smooth)) +
-  geom_histogram(binwidth = 1)
-```
 
 
 segment data based on gradient (>3%, supported by Parkin et al. 2010, Castro et al. 2022)
@@ -227,8 +234,8 @@ Also check if there are single values that are surrounded by other values => set
 ```{r}
 bike_gradient <- bike_gradient |> 
   mutate(
-    steep_up = gradient_smooth > 3,
-    steep_down = gradient_smooth < -3
+    steep_up = gradient_smooth > 5,
+    steep_down = gradient_smooth < -5
   )
 
 #removing single FALSE/TRUE values
@@ -305,17 +312,42 @@ avg_speeds_reg <- avg_speeds |>
 create for loop, so that every steep part gets a column where the average speed difference from the part before and the part after is calculated.
 Then take only these columns and put them in a linear regression, with speed diff and steepness of the gradient.
 ```{r}
-for(i in 1:nrow(avg_speeds)) {       # for-loop over rows
-  if (avg_speeds[i+1, ]$uphill & avg_speeds[i, ]$flat){
-    avg_speeds[i, ]$after_steep = TRUE
+#loops over rows, calculates a speed on uphill rows, that are followed and preceded by flat parts
+#doesn't consider the first and last row (due to no preceding/following segments)
+avg_speeds <- avg_speeds |> 
+  mutate(speed_diff = 0)
+
+for(i in 2:(nrow(avg_speeds)-1)) {       # for-loop over rows
+  if (avg_speeds[i, ]$uphill & avg_speeds[i+1, ]$flat & avg_speeds[i-1, ]$flat){
+    avg_speeds[i, ]$speed_diff <- avg_speeds[i-1, ]$seg_avg - avg_speeds[i+1, ]$seg_avg
+  }
+  else {
+    avg_speeds[i, ]$speed_diff <- NA
   }
 }
 ```
 
+```{r}
+reg <- lm(avg_speeds$speed_diff~avg_speeds$avg_grad)
+
+#get intercept and slope value
+coeff<-coefficients(reg)
+intercept<-coeff[1]
+slope<- coeff[2]
+
+summary(reg)
+```
 
 ```{r}
-test <- bike_gradient |> 
-  filter(segment_id_down == 46 | segment_id_down == 47 | segment_id_down == 48)
+avg_speeds |> 
+  ggplot()+
+  geom_point(aes(speed_diff, avg_grad))+
+  # geom_abline(intercept = intercept, slope = slope, color="red", 
+  #              linetype="dashed", size=1.5) +
+  ylim(0, 15)
+
 ```
+
+
 
 
