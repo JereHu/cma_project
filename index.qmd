@@ -9,6 +9,8 @@ format:
     code-fold: true
     toc: true
     toc-depth: 4
+    toc-location: left
+    toc-expand: true
 
 warning: false
 message: false
@@ -58,34 +60,18 @@ Society philosophy merciful selfish sexuality depths overcome madness. Morality 
 When cycling in Switzerland, hills are omnipresent and going up- or downhill is nearly inevitable. Cyclists therefore go up and down which influences their efficiency, with steep gradients of more than 10-15% being less efficient than walking [@Ardigo2003]. The author of this paper was interested whether cyclists slow down after a steep hill and whether they speed up again after a while. This seemed logical to the author, mainly due to his own experiences.
 
 This led to the following Research Question and Hypothesis: 
-RQ: Do cyclists slow down after a steep part of their route compared to just before the steep part?
-H1: They tend to get slower after a steep part.
-H2: They recover after a while to the level before the steep part, but eventually there is a fatigue effect over one journey. 
+
+RQ: Do cyclists slow down after a steep part of their route compared to just before the steep part? 
+
+H1: They tend to get slower after a steep part. 
+
+H2: They recover after a while to the level before the steep part, but eventually there is a fatigue effect over one  journey.
+
 H3: There is a training effect over multiple journeys.
 
 To explore this Research Question, a movement analysis was performed in R.
 According to a preliminary literature review, there has not been much research on the topic of steep gradients for cyclists in the GIS field. [@Parkin2010] refer to steep gradients for cyclists starting from 3% slope, where the cyclists mean speed starts to fall off and the slope is ‘being felt’. [@Castro2022] expanded on [@Parkin2010] idea, but they were more interested in acceleration over the gradient than in the speed after the gradient. Their simulation results show that some cyclists have enough power to maintain their speed over long uphill stretches, but they also not that this would not be expected in real-life scenarios. [@Winters2016] used a gradient in their bike score calculations, but only considered 2-10% as differentiated gradients. It is not stated whether this was due to the study area or other factors, but it means that more than 10% is deemed as hard as it gets. Similarly, [@Cho1999] describe a slope of 0-15% in their study on gear ratios, but do not elaborate why they chose that range, implying that above 15% there is not much difference for their system. Even considering papers from Kinesiology and Physiology ([@Duc2008]; [@Swinnen2022]) there seems to not be a consent on what is considered steep. 
 Aggregating this all together, there seems to not be a consent on what is steep and most authors design their own parameters as they see fit. For this study, this means that the approach is mostly freeform and designed by the author. The starting point of a 3% gradient was chosen in this paper. The algorithm that was used to segment the data and to calculate speed was modified from [@Laube2011] and based on Algorithms taught in the UZH course: GEO880 Computational Movement Analysis.
-
-
-```{r}
-library(ggplot2)
-
-# Include tables with the function "kable"
-
-knitr::kable(head(mtcars))
-```
-
-
-```{r}
-# include plots automatically
-
-ggplot(mtcars, aes(cyl, disp)) +
-  geom_point()
-
-```
-
-
 
 
 ## Material and Methods
@@ -144,7 +130,7 @@ tm_shape(posmo_sf_cut) +
 ```{r}
 #| label: tbl-overview
 #| tbl-cap: Structure of initial Dataframe
-knitr::kable(head(posmo_sf_cut))
+knitr::kable(head(posmo_sf_cut, n= 3))
 ```
 
 To calculate the slope, a Digital Elevation Model (DEM) of Switzerland with a 0.5 meter resolution from swissALTI3D was used. The relevant tiles were hand-picked (@fig-handpicked) to cover roughly the same extent as the bike data . This resulted in 190 tiles of 1km x 1km.
@@ -198,7 +184,7 @@ plot(virt_rast)
 
 ```{r}
 #| label: fig-height
-#| fig-cap: Visualization of data points aggregated with height attribute from DEM.
+#| fig-cap: Visualization of data points aggregated with height attribute in meters from DEM.
 
 DEM <- extract(virt_rast, posmo_sf_cut)
 
@@ -217,7 +203,7 @@ The data was then filtered for points that represent stops in movement (like bre
 The points that were determined to be stops where then excluded from the data.
 ```{r}
 #| label: fig-speed
-#| fig-cap: Visualization of data points aggregated with the speed attribute.
+#| fig-cap: Visualization of data points aggregated with the speed attribute in km/h.
 
 # temporal window, need N and E, take that from geometry column, add a grouping column date, use lead and lag to compute euclidian distances (which works thanks to Swiss Coordinate system)
 bike <- posmo_sf_cut |>
@@ -294,7 +280,7 @@ plot_grid(hist1, hist2, cols = 2)
 
 ```{r}
 #| label: fig-gradient
-#| fig-cap: Visualization of data points aggregated with the gradient attribute.
+#| fig-cap: Visualization of data points aggregated with the gradient attribute in Percent.
 
 tm_shape(bike_gradient) +
   tm_dots("gradient_smooth")
@@ -304,12 +290,12 @@ In a next step, the data was segmented based on a gradient threshold of 3% (@Par
 
 ```{r}
 #| label: fig-segmentup
-#| fig-cap: Visualization of upwards of segments. (There are also downward segments.)
+#| fig-cap: Visualization of upwards segments. (There are also downward segments.)
 
 bike_gradient <- bike_gradient |> 
   mutate(
-    steep_up = gradient_smooth > 5,
-    steep_down = gradient_smooth < -5
+    steep_up = gradient_smooth > 3,
+    steep_down = gradient_smooth < -3
   )
 
 #removing single FALSE/TRUE values
@@ -352,7 +338,7 @@ avg_speeds <- bike_gradient |>
     avg_grad = mean(gradient_smooth)
   ) 
 
-knitr::kable(head(avg_speeds))
+knitr::kable(head(avg_speeds, n =3))
 ```
 
 
@@ -382,7 +368,7 @@ for(i in 2:(nrow(avg_speeds)-1)) {       # for-loop over rows
 ```
 
 
-```{r echo=FALSE,  results='asis'}
+```{r}
 #| label: fig-reg
 #| fig-cap: Overview of regression results.
 
@@ -395,6 +381,8 @@ slope<- coeff[2]
 
 # library(xtable)
 # knitr::kable(xtable(summary(reg)), format="markdown", align="c")
+#https://github.com/mgimond/Stats-in-R/blob/gh-pages/regression.qmd 
+
 summary(reg)
 
 ```

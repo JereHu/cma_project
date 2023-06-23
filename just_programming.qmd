@@ -72,7 +72,7 @@ tm_shape(posmo_sf_cut) +
 ```
 
 ```{r}
-head(posmo_sf_cut)
+head(posmo_sf_cut, n=2)
 ```
 
 Download DEM from many tifs from swisstopo alti3D (csv)
@@ -280,7 +280,7 @@ avg_speeds <- bike_gradient |>
     avg_grad = mean(gradient_smooth)
   ) 
 
-head(avg_speeds)
+head(avg_speeds, n=3)
 ```
 
 ```{r}
