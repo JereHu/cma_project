@@ -7,12 +7,11 @@ output: html
 format:
   html:
     code-fold: true
+    toc: true
+    toc-depth: 4
+
 warning: false
-website:
-  sidebar:
-    style: "docked"
-    search: false
-    contents: auto
+message: false
 ---
 
 
@@ -37,7 +36,16 @@ website:
 
 
 ```
-
+```{r}
+library("readr") 
+library("sf") 
+library("ggplot2")
+library("dplyr")
+library("tmap")
+library("terra")
+library("ggspatial")
+library("cowplot")
+```
 
 ## Abstract
 
@@ -83,26 +91,335 @@ ggplot(mtcars, aes(cyl, disp)) +
 ## Material and Methods
 ### Data
 
-The data used for this analysis is cycling data recorded with the movement tracking app POSMO over multiple trips by the author in Switzerland between Würenlos and Altstetten. The GPS data is mostly recorded every 10 seconds and the collection was done on 8 days between April 7th and Mai 21st. The data has been pre-processed, so that only bike trips are shown and only points from bike trips were included. The data is verified, meaning that the GPS location are rather precise and no outliers were found visually. The data was also cropped, so that the home location cannot be exactly determined.
-[image] 
-[summary of dataset]
-To calculate the slope, a Digital Elevation Model (DEM) of Switzerland with a 0.5 meter resolution from swissALTI3D was used. The relevant tiles were hand-picked to cover roughly the same extent as the bike data. This resulted in 190 tiles of 1km x 1km.
-[image]
-
-
-## Results
+The data used for this analysis is cycling data recorded with the movement tracking app POSMO over multiple trips by the author in Switzerland between Würenlos and Altstetten (@fig-dataoverview). The GPS data is mostly recorded every 10 seconds and the collection was done on 8 days between April 7th and Mai 21st. The data has been pre-processed, so that only bike trips are shown and only points from bike trips were included. The data is verified, meaning that the GPS location are rather precise and no outliers were found visually. The data was also cropped, so that the home location cannot be exactly determined.
 ```{r}
+#| label: fig-dataoverview
+#| fig-cap: All routes after pre-processing, displayed by date collected.
+
+# Reading in Posmo Data, cropping it so that home location is not shown and filter bike data
+posmo <- read_delim("datasets/posmo_2023-04-07T00_00_00+02_00-2023-06-02T23_59_59+02_00.csv")
+
+# make sure lat and long do not have na values
+posmo<-posmo[!is.na(posmo$lon_x),]
+posmo<-posmo[!is.na(posmo$lat_y),]
+
+posmo_sf <- st_as_sf(posmo, coords = c("lon_x", "lat_y"), crs = 4326, remove = FALSE)
+
+posmo_sf <- st_transform(posmo_sf, crs = 2056)
+
+# filter out home coordinates
+# make polygon https://www.keene.edu/campus/maps/tool/ 
+p1 = st_point(c(8.4265439, 47.3955710))
+p2 = st_point(c(8.4267632, 47.3898521))
+p3 = st_point(c(8.4179950, 47.3890680))
+p4 = st_point(c(8.4178061, 47.3923967))
+
+# make polygon
+poly = st_multipoint(c(p1, p2, p3, p4)) %>%
+  st_cast("POLYGON") %>%
+  st_sfc(crs = 4326) %>%
+  st_transform(crs = 2056)
+
+# create function that 'cuts' out the area covered by the polygon
+not_covered_by  = function(x, y) !st_covered_by(x, y)
+
+#leave out everything that's not bike data, filter the polygon, also leave out 4-11-2023, 4-25-2023 and 4-28-2023, because that was not a bike tour, only very short trips
+posmo_sf_cut <- posmo_sf |> 
+  filter(transport_mode == "Bike")%>%
+  st_filter(poly, .predicate=not_covered_by) |> 
+  ungroup() |> 
+  mutate(
+    datetime = as.POSIXct(datetime),
+    date = lubridate::date(datetime)
+    ) |> 
+  filter(date != as.Date('2023-04-11') & date != as.Date('2023-04-25') & date != as.Date('2023-04-28')) |> 
+  select(-user_id, -place_name)
+
+tmap_mode("view")
+tm_shape(posmo_sf_cut) +
+  tm_dots("date") 
 
 ```
 
-<!-- the following is just a placeholder text, remove it!-->
-Philosophy oneself passion play fearful self noble zarathustra deceptions sexuality. Endless ocean of oneself dead ocean. Selfish decrepit.
+```{r}
+#| label: tbl-overview
+#| tbl-cap: Structure of initial Dataframe
+knitr::kable(head(posmo_sf_cut))
+```
+
+To calculate the slope, a Digital Elevation Model (DEM) of Switzerland with a 0.5 meter resolution from swissALTI3D was used. The relevant tiles were hand-picked (@fig-handpicked) to cover roughly the same extent as the bike data . This resulted in 190 tiles of 1km x 1km.
+
+![Manually Selected area of Interest on swissALTI3D](images/Screenshot_DEM_selection.jpg){#fig-handpicked}
+
+
+
+
+
+
+### Methods
+#### Height
+To use the elevation together with the bike data, they had to be joined. Loading all DEM raster tiles into memory was not feasible and would have taken a lot of time. With the R package terra, this was made easy, as it only loads references into memory that are actually used. A virtual raster layer was created, which references all tiles, which then was loaded as a raster layer that was then made plottable (see @fig-raster). This method does not allow for more nuanced plotting with packages like ggplot, as they require the data to be in memory.
+
+The DEM height attribute was then extracted and added to the bike data points as can be seen in @fig-height.
+
+
+```{r}
+#| results: false
+#| label: fig-raster
+#| fig-cap: 190 tiles of DEM displayed together.
+
+#csv has all download paths from alti3d tiles  https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html 
+all_tif <- read.csv("datasets/alti3D_all.csv", header = FALSE)
+
+# terra help https://rspatial.org/spatial-terra/8-rastermanip.html 
+
+#download all files to folder, commented out because it only has to run once
+# for (fi in all_tif$V1){
+#   outfile <- basename(fi)
+# 
+#   print(outfile)
+# 
+#   download.file(fi, paste0("datasets/alti3d_05/", outfile),mode = "wb")  # mode (binary) very important
+# }
+
+# takes all files with .tif from a folder
+file_list <- list.files("datasets/alti3d_05",".tif",full.names = TRUE)
+
+# makes a virtual raster layer from the files
+vrt(file_list, "altivrt.vrt",overwrite = TRUE)
+
+# import the data from the virtual raster layer
+virt_rast <- rast("altivrt.vrt")
+
+plot(virt_rast)
+```
+
+
+
+```{r}
+#| label: fig-height
+#| fig-cap: Visualization of data points aggregated with height attribute from DEM.
+
+DEM <- extract(virt_rast, posmo_sf_cut)
+
+posmo_sf_cut$height <- DEM$altivrt
+
+tm_shape(posmo_sf_cut) +
+  tm_dots("height") 
+
+```
+
+#### Speed and Stops
+
+The following approach was adopted from @Laube2011. 
+To calculate the speed, a temporal window of 1 was used, this means that the distance for each point was calculated to the one before and after. This distance was then divided by the time difference of these points and multiplied by 3.6 to get kilometers per hour.
+The data was then filtered for points that represent stops in movement (like breaks). In @Laube2011, this was done by comparing average distance within the moving window. For this study, the stop criterion was adapted such that a cyclist stops when the average speed of the current, the previous and next point is less than 1 km/h, or if the distance covered from the last point or to the next point is less than 2 meters. This criterion was empirically tested on the data.
+The points that were determined to be stops where then excluded from the data.
+```{r}
+#| label: fig-speed
+#| fig-cap: Visualization of data points aggregated with the speed attribute.
+
+# temporal window, need N and E, take that from geometry column, add a grouping column date, use lead and lag to compute euclidian distances (which works thanks to Swiss Coordinate system)
+bike <- posmo_sf_cut |>
+  mutate(E = st_coordinates(geometry)[,1]) |> 
+  mutate(N = st_coordinates(geometry)[,2]) |> 
+  group_by(date) |> 
+    mutate(
+        nMinus1 = sqrt((lag(N, 1) - N)^2 + (lag(E, 1) - E)^2), # distance to pos -10 sec
+        nPlus1  = sqrt((N - lead(N, 1))^2 + (E - lead(E, 1))^2), # distance to pos +10 sec
+    ) |> 
+  ungroup()
+
+# speed, defined as the average of step behind and step in front divided by the timedifference of datetime of these two steps. *3.6 to get km/h
+bike <- bike |> 
+  mutate(
+    speed = ((nPlus1 + nMinus1)/as.integer(difftime(lead(datetime), lag(datetime), "secs")))*3.6
+  )
+
+bike <- bike |>
+    ungroup() |>
+    mutate(static = ifelse((speed + lead(speed) + lag(speed))/3 < 1, TRUE, nPlus1 < 2 | nMinus1 < 2))
+
+# bike |>
+#   ggplot(aes(E, N)) +
+#   geom_path() +
+#   geom_point(aes(color = static), alpha = 0.3) +
+#   coord_fixed()
+
+bike_filter <- bike |>
+    filter(!static)
+
+tm_shape(bike_filter) +
+  tm_dots("speed") 
+```
+
+#### Gradient
+To calculate the gradient of each point, the distance to the next point was divided by the height difference to that point and multiplied by 100 to get percent (see @fig-slopecalc), as is standard for road gradients. 
+There were some end points of routes that calculated to 400% gradient. Therefore a filter was set to exclude points with more than +-50% gradient. Then, the decision to smooth the gradient with a moving window (+-1 point) was made, so that there are no extreme jumps (before the smoothing, the max gradient was +40% and min gradient was -30%, which is unlikely in this study area). 
+
+![Graphical representation for gradient of point A. Gradient m = x/y * 100. Where x is the distance to the next point, y is the height difference between the points.](images/slope.png){#fig-slopecalc}
+
+This led to the distribution presented on the right in @fig-hist, which looks normally distributed with not many outliers. This would be expected for continuous bike data.
+
+```{r, figures-side, fig.show="hold", out.width="50%"}
+#| label: fig-hist
+#| fig-cap: "Left: Histogram before filtering and smoothing, Right: Histogram after filtering and smoothing"
+
+bike_gradient <- bike_filter |> 
+  mutate(
+    gradient = (lead(height)-height)/nPlus1*100
+  )
+
+hist1 <- ggplot(bike_gradient, aes(gradient)) +
+  geom_histogram(binwidth = 1)
+
+bike_gradient <- bike_gradient |> 
+  filter(gradient < 50 ) |> 
+  filter(gradient > -50) |> 
+  mutate(
+    gradientplus1 = lead(gradient),
+    gradientminus1 = lag(gradient)
+  ) |>  
+  rowwise() |> 
+  mutate(
+    gradient_smooth = mean(c(gradient, gradientplus1, gradientminus1))
+    ) |> 
+  ungroup()
+
+hist2 <- ggplot(bike_gradient, aes(gradient_smooth)) +
+  geom_histogram(binwidth = 1)
+
+plot_grid(hist1, hist2, cols = 2)
+```
+
+```{r}
+#| label: fig-gradient
+#| fig-cap: Visualization of data points aggregated with the gradient attribute.
+
+tm_shape(bike_gradient) +
+  tm_dots("gradient_smooth")
+```
+
+In a next step, the data was segmented based on a gradient threshold of 3% (@Parkin2010, @Castro2022). To create the segments, a function was used from GEO880. It creates an ID for each point, based on run length encoding from R. A Boolean column was created based on the threshold, one for whether the gradient is steep uphill and one for whether it is steep downhill. In this column, if a point that was steep was followed and preceded by non-steep points, it was also assigned non-steep. In essence, a moving filter was run so that there are no segments that only consist of one point. The ID function then assigns an ID to all True values until there are False values, for which it assigns a new ID and so on. The result of the segmentation can be seen in @fig-segmentup.
+
+```{r}
+#| label: fig-segmentup
+#| fig-cap: Visualization of upwards of segments. (There are also downward segments.)
+
+bike_gradient <- bike_gradient |> 
+  mutate(
+    steep_up = gradient_smooth > 5,
+    steep_down = gradient_smooth < -5
+  )
+
+#removing single FALSE/TRUE values
+# REVIEW AGAIN; JUST TO MAKE SURE IT IS CORRECT
+bike_gradient <- bike_gradient |> 
+  mutate(
+    steep_up = ifelse(!steep_up, lag(steep_up) & lead(steep_up), steep_up),
+    steep_up = ifelse(steep_up, lag(steep_up) | lead(steep_up), steep_up),
+    steep_down = ifelse(!steep_down, lag(steep_down) & lead(steep_down), steep_down),
+    steep_down = ifelse(steep_down, lag(steep_down) | lead(steep_down), steep_down)
+  )
+
+rle_id <- function(vec) {
+    x <- rle(vec)$lengths
+    as.factor(rep(seq_along(x), times = x))
+}
+
+bike_gradient <- bike_gradient |>
+    mutate(segment_id_up = rle_id(steep_up),
+           segment_id_down = rle_id(steep_down))
+
+tm_shape(bike_gradient) +
+  tm_dots("segment_id_up") 
+```
+
+The data was put into a new data frame, by summarizing segments and grouping by uphill and downhill segment ID, which allows a unique distinction between flat, uphill and downhill parts. Then the speed difference between the average speed of a flat part before and a flat part directly after an uphill segment was calculated. To test H1 and H2, a regression model was used which tests whether the average gradient of the uphill slope is a good predictor of the speed difference. 
+
+
+```{r}
+#| label: tbl-new
+#| tbl-cap: Head of new dataframe to be used for the regression.
+
+avg_speeds <- bike_gradient |> 
+  group_by(segment_id_up, segment_id_down) |> 
+  summarise(
+    seg_avg = mean(speed),
+    uphill = ifelse(all(steep_up), TRUE, FALSE),
+    flat = ifelse(all(!steep_up & !steep_down), TRUE, FALSE),
+    downhill = ifelse(all(steep_down), TRUE, FALSE),
+    avg_grad = mean(gradient_smooth)
+  ) 
+
+knitr::kable(head(avg_speeds))
+```
+
+
+
+## Results
+
+
+The results of the summary and the regression (@fig-reg) do not indicate a relationship between speed difference and uphill gradient. With an R-squared value of 0.02, there is no explanation of the variance in speed by the uphill gradient. 
+H1 has to be rejected, as there is conclusive evidence that the speed difference can not be attributed to the slope gradient.
+
+
+```{r}
+#couldn't figure out a working vectorized version.
+#loops over rows, calculates a speed on uphill rows, that are followed and preceded by flat parts
+#doesn't consider the first and last row (due to no preceding/following segments)
+avg_speeds <- avg_speeds |> 
+  mutate(speed_diff = 0)
+
+for(i in 2:(nrow(avg_speeds)-1)) {       # for-loop over rows
+  if (avg_speeds[i, ]$uphill & avg_speeds[i+1, ]$flat & avg_speeds[i-1, ]$flat){
+    avg_speeds[i, ]$speed_diff <- avg_speeds[i-1, ]$seg_avg - avg_speeds[i+1, ]$seg_avg
+  }
+  else {
+    avg_speeds[i, ]$speed_diff <- NA
+  }
+}
+```
+
+
+```{r}
+#| label: fig-reg
+#| fig-cap: Overview of regression results.
+reg <- lm(avg_speeds$speed_diff~avg_speeds$avg_grad)
+
+#get intercept and slope value
+coeff<-coefficients(reg)
+intercept<-coeff[1]
+slope<- coeff[2]
+
+summary(reg)
+```
+
+```{r}
+#| label: fig-scatter
+#| fig-cap: Scatterplot of Segments that are upward with their gradient and speed-difference of the flat parts before and after.
+
+avg_speeds |> 
+  ggplot()+
+  geom_point(aes(speed_diff, avg_grad))+
+  # geom_abline(intercept = intercept, slope = slope, color="red", 
+  #              linetype="dashed", size=1.5) +
+  ylim(0, 15)
+
+```
+
+
+
+## Limitations
+This study is limited by the summary of segments. The initial Idea was to treat every point individually and being able to see distinguished speed differences. By summarizing the segments into one average speed and slope, the calculation faster and less complicated, but the results clearly show that the method does not fit the study. The fact that there are a lot of flat segments following steep segments that increase in speed, probably means there is an issue in the methodology.
+There is also a limitation in data availability. With more data, there is a possibility that the trend would be towards more speed difference.
 
 ## Discussion
+The method presented in this study up until the summary of segment data seems robust enough for the application. Gradients are identified correctly, when doing a visual validation with an underlying map. Meaning that the choice of 3% .....
 
-<!-- the following is just a placeholder text, remove it!-->
-Justice convictions spirit sexuality insofar free marvelous joy. Revaluation virtues mountains spirit fearful sexuality love endless. Society intentions will noble burying aversion moral. Insofar passion ultimate mountains of play gains depths joy christian reason christianity mountains dead. Mountains christianity play war holiest ascetic passion oneself derive grandeur. Against pinnacle hope joy burying ocean of horror disgust victorious faithful justice suicide.
 
-this is a references test [@swisstopo2021]
+### Acknowledgement
+Thank you to Nils Ratnaweera. Without him the memory of my laptop would be burnt out and the DEM would not have loaded.
+
 
 ## References

@@ -17,8 +17,9 @@ library("ggspatial")
 ```
 
 
-Reading in Posmo Data, cropping it so that home location is not shown and filter bike data
+
 ```{r}
+# Reading in Posmo Data, cropping it so that home location is not shown and filter bike data
 posmo <- read_delim("datasets/posmo_2023-04-07T00_00_00+02_00-2023-06-02T23_59_59+02_00.csv")
 
 # make sure lat and long do not have na values
@@ -124,13 +125,11 @@ DEM <- extract(virt_rast, posmo_sf_cut)
 
 posmo_sf_cut$height <- DEM$altivrt
 
-```
-
-Plotting it.
-```{r}
 tm_shape(posmo_sf_cut) +
   tm_dots("height") 
+
 ```
+
 
 
 ```{r}
@@ -146,8 +145,9 @@ bike <- posmo_sf_cut |>
   ungroup()
 ```
 
-speed, defined as the average of step behind and step in front divided by the timedifference of datetime of these two steps. *3.6 to get km/h
+
 ```{r}
+# speed, defined as the average of step behind and step in front divided by the timedifference of datetime of these two steps. *3.6 to get km/h
 bike <- bike |> 
   mutate(
     speed = ((nPlus1 + nMinus1)/as.integer(difftime(lead(datetime), lag(datetime), "secs")))*3.6
@@ -155,11 +155,6 @@ bike <- bike |>
 ```
 
 stops, defined as the current and next speed is <1 km/h, it is a stop (determined from a quick look at the speed data. a.k.a 20 secs with < 1km/h is stop)
-
-```{r}
-testspeed <- bike |> 
-  filter(speed < 1)
-```
 
 
 ```{r}
