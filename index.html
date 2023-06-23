@@ -161,8 +161,9 @@ div.csl-indent {
 </section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<!-- the following is just a placeholder text, remove it!-->
-<p>Against holiest pinnacle mountains merciful ideal society play disgust will ubermensch ultimate pinnacle victorious. Snare value law gains battle pious intentions revaluation strong. Insofar snare faith ideal oneself.</p>
+<p>When cycling in Switzerland, hills are omnipresent and going up- or downhill is nearly inevitable. Cyclists therefore go up and down which influences their efficiency, with steep gradients of more than 10-15% being less efficient than walking <span class="citation" data-cites="Ardigo2003">(<a href="#ref-Ardigo2003" role="doc-biblioref">Ardigò, Seibene, and Minetti 2003</a>)</span>. The author of this paper was interested whether cyclists slow down after a steep hill and whether they speed up again after a while. This seemed logical to the author, mainly due to his own experiences.</p>
+<p>This led to the following Research Question and Hypothesis: RQ: Do cyclists slow down after a steep part of their route compared to just before the steep part? H1: They tend to get slower after a steep part. H2: They recover after a while to the level before the steep part, but eventually there is a fatigue effect over one journey. H3: There is a training effect over multiple journeys.</p>
+<p>To explore this Research Question, a movement analysis was performed in R. According to a preliminary literature review, there has not been much research on the topic of steep gradients for cyclists in the GIS field. <span class="citation" data-cites="Parkin2010">(<a href="#ref-Parkin2010" role="doc-biblioref">Parkin and Rotheram 2010</a>)</span> refer to steep gradients for cyclists starting from 3% slope, where the cyclists mean speed starts to fall off and the slope is ‘being felt’. <span class="citation" data-cites="Castro2022">(<a href="#ref-Castro2022" role="doc-biblioref">Castro, Johansson, and Olstam 2022</a>)</span> expanded on <span class="citation" data-cites="Parkin2010">(<a href="#ref-Parkin2010" role="doc-biblioref">Parkin and Rotheram 2010</a>)</span> idea, but they were more interested in acceleration over the gradient than in the speed after the gradient. Their simulation results show that some cyclists have enough power to maintain their speed over long uphill stretches, but they also not that this would not be expected in real-life scenarios. <span class="citation" data-cites="Winters2016">(<a href="#ref-Winters2016" role="doc-biblioref">Winters et al. 2016</a>)</span> used a gradient in their bike score calculations, but only considered 2-10% as differentiated gradients. It is not stated whether this was due to the study area or other factors, but it means that more than 10% is deemed as hard as it gets. Similarly, <span class="citation" data-cites="Cho1999">(<a href="#ref-Cho1999" role="doc-biblioref"><strong>Cho1999?</strong></a>)</span> describe a slope of 0-15% in their study on gear ratios, but do not elaborate why they chose that range, implying that above 15% there is not much difference for their system. Even considering papers from Kinesiology and Physiology (<span class="citation" data-cites="Duc2008">(<a href="#ref-Duc2008" role="doc-biblioref">Duc et al. 2008</a>)</span>; <span class="citation" data-cites="Swinnen2022">(<a href="#ref-Swinnen2022" role="doc-biblioref">Swinnen, Laughlin, and Hoogkamer 2022</a>)</span>) there seems to not be a consent on what is considered steep. Aggregating this all together, there seems to not be a consent on what is steep and most authors design their own parameters as they see fit. For this study, this means that the approach is mostly freeform and designed by the author. The starting point of a 3% gradient was chosen in this paper. The algorithm that was used to segment the data and to calculate speed was modified from <span class="citation" data-cites="Laube2011">(<a href="#ref-Laube2011" role="doc-biblioref">Laube and Purves 2011</a>)</span> and based on Algorithms taught in the UZH course: GEO880 Computational Movement Analysis.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -293,8 +294,6 @@ div.csl-indent {
 </table>
 </div>
 </div>
-<!-- the following is just a placeholder text, remove it!-->
-<p>Revaluation evil aversion ultimate decrepit disgust decrepit eternal-return noble faithful pinnacle. Truth ascetic inexpedient decrepit free. Ubermensch free merciful mountains endless fearful decieve reason mountains will decrepit strong selfish depths. Overcome faith snare gains oneself transvaluation.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -310,8 +309,10 @@ div.csl-indent {
 </section>
 <section id="material-and-methods" class="level2">
 <h2 class="anchored" data-anchor-id="material-and-methods">Material and Methods</h2>
-<!-- the following is just a placeholder text, remove it!-->
-<p>Christianity revaluation value battle faithful marvelous society derive free truth. Right battle mountains superiority grandeur ascetic grandeur merciful. Derive against intentions burying salvation ocean. Right intentions dead victorious ideal spirit evil ultimate joy. Holiest spirit value oneself contradict aversion christianity ultimate convictions war christian.</p>
+<section id="data" class="level3">
+<h3 class="anchored" data-anchor-id="data">Data</h3>
+<p>The data used for this analysis is cycling data recorded with the movement tracking app POSMO over multiple trips by the author in Switzerland between Würenlos and Altstetten. The GPS data is mostly recorded every 10 seconds and the collection was done on 8 days between April 7th and Mai 21st. The data has been pre-processed, so that only bike trips are shown and only points from bike trips were included. The data is verified, meaning that the GPS location are rather precise and no outliers were found visually. The data was also cropped, so that the home location cannot be exactly determined. [image] [summary of dataset] To calculate the slope, a Digital Elevation Model (DEM) of Switzerland with a 0.5 meter resolution from swissALTI3D was used. The relevant tiles were hand-picked to cover roughly the same extent as the bike data. This resulted in 190 tiles of 1km x 1km. [image]</p>
+</section>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
@@ -333,8 +334,29 @@ div.csl-indent {
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Ardigo2003" class="csl-entry" role="doc-biblioentry">
+Ardigò, L. P., F. Seibene, and A. E. Minetti. 2003. <span>“The Optimal Locomotion on Gradients: Walking, Running or Cycling?”</span> <em>European Journal of Applied Physiology</em> 90 (October): 365–71. <a href="https://doi.org/10.1007/s00421-003-0882-7">https://doi.org/10.1007/s00421-003-0882-7</a>.
+</div>
+<div id="ref-Castro2022" class="csl-entry" role="doc-biblioentry">
+Castro, Guillermo Pérez, Fredrik Johansson, and Johan Olstam. 2022. <span>“How to Model the Effect of Gradient on Bicycle Traffic in Microscopic Traffic Simulation.”</span> <em>Transportation Research Record</em>. SAGE Publications Ltd. <a href="https://doi.org/10.1177/03611981221094300">https://doi.org/10.1177/03611981221094300</a>.
+</div>
+<div id="ref-Duc2008" class="csl-entry" role="doc-biblioentry">
+Duc, S., W. Bertucci, J. N. Pernin, and F. Grappe. 2008. <span>“Muscular Activity During Uphill Cycling: Effect of Slope, Posture, Hand Grip Position and Constrained Bicycle Lateral Sways.”</span> <em>Journal of Electromyography and Kinesiology</em> 18 (February): 116–27. <a href="https://doi.org/10.1016/j.jelekin.2006.09.007">https://doi.org/10.1016/j.jelekin.2006.09.007</a>.
+</div>
 <div id="ref-swisstopo2021" class="csl-entry" role="doc-biblioentry">
 Federal Office of Topography swisstopo. 2021. <span>“swissALTI3D.”</span> <a href="https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html">https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html</a>.
+</div>
+<div id="ref-Laube2011" class="csl-entry" role="doc-biblioentry">
+Laube, Patrick, and Ross S. Purves. 2011. <span>“How Fast Is a Cow? Cross-Scale Analysis of Movement Data.”</span> <em>Transactions in GIS</em> 15 (July): 401–18. <a href="https://doi.org/10.1111/j.1467-9671.2011.01256.x">https://doi.org/10.1111/j.1467-9671.2011.01256.x</a>.
+</div>
+<div id="ref-Parkin2010" class="csl-entry" role="doc-biblioentry">
+Parkin, John, and Jonathon Rotheram. 2010. <span>“Design Speeds and Acceleration Characteristics of Bicycle Traffic for Use in Planning, Design and Appraisal.”</span> <em>Transport Policy</em> 17 (September): 335–41. <a href="https://doi.org/10.1016/j.tranpol.2010.03.001">https://doi.org/10.1016/j.tranpol.2010.03.001</a>.
+</div>
+<div id="ref-Swinnen2022" class="csl-entry" role="doc-biblioentry">
+Swinnen, Wannes, Emily Laughlin, and Wouter Hoogkamer. 2022. <span>“Everesting: Cycling the Elevation of the Tallest Mountain on Earth.”</span> <em>European Journal of Applied Physiology</em> 122 (December): 2565–74. <a href="https://doi.org/10.1007/s00421-022-05032-z">https://doi.org/10.1007/s00421-022-05032-z</a>.
+</div>
+<div id="ref-Winters2016" class="csl-entry" role="doc-biblioentry">
+Winters, Meghan, Kay Teschke, Michael Brauer, and Daniel Fuller. 2016. <span>“Bike Score®: Associations Between Urban Bikeability and Cycling Behavior in 24 Cities.”</span> <em>International Journal of Behavioral Nutrition and Physical Activity</em> 13 (February). <a href="https://doi.org/10.1186/s12966-016-0339-0">https://doi.org/10.1186/s12966-016-0339-0</a>.
 </div>
 </div></section></div></main>
 <!-- /main column -->

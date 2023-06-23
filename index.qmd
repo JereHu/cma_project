@@ -42,8 +42,18 @@ Society philosophy merciful selfish sexuality depths overcome madness. Morality 
 
 ## Introduction
 
-<!-- the following is just a placeholder text, remove it!-->
-Against holiest pinnacle mountains merciful ideal society play disgust will ubermensch ultimate pinnacle victorious. Snare value law gains battle pious intentions revaluation strong. Insofar snare faith ideal oneself.
+When cycling in Switzerland, hills are omnipresent and going up- or downhill is nearly inevitable. Cyclists therefore go up and down which influences their efficiency, with steep gradients of more than 10-15% being less efficient than walking [@Ardigo2003]. The author of this paper was interested whether cyclists slow down after a steep hill and whether they speed up again after a while. This seemed logical to the author, mainly due to his own experiences.
+
+This led to the following Research Question and Hypothesis: 
+RQ: Do cyclists slow down after a steep part of their route compared to just before the steep part?
+H1: They tend to get slower after a steep part.
+H2: They recover after a while to the level before the steep part, but eventually there is a fatigue effect over one journey. 
+H3: There is a training effect over multiple journeys.
+
+To explore this Research Question, a movement analysis was performed in R.
+According to a preliminary literature review, there has not been much research on the topic of steep gradients for cyclists in the GIS field. [@Parkin2010] refer to steep gradients for cyclists starting from 3% slope, where the cyclists mean speed starts to fall off and the slope is ‘being felt’. [@Castro2022] expanded on [@Parkin2010] idea, but they were more interested in acceleration over the gradient than in the speed after the gradient. Their simulation results show that some cyclists have enough power to maintain their speed over long uphill stretches, but they also not that this would not be expected in real-life scenarios. [@Winters2016] used a gradient in their bike score calculations, but only considered 2-10% as differentiated gradients. It is not stated whether this was due to the study area or other factors, but it means that more than 10% is deemed as hard as it gets. Similarly, [@Cho1999] describe a slope of 0-15% in their study on gear ratios, but do not elaborate why they chose that range, implying that above 15% there is not much difference for their system. Even considering papers from Kinesiology and Physiology ([@Duc2008]; [@Swinnen2022]) there seems to not be a consent on what is considered steep. 
+Aggregating this all together, there seems to not be a consent on what is steep and most authors design their own parameters as they see fit. For this study, this means that the approach is mostly freeform and designed by the author. The starting point of a 3% gradient was chosen in this paper. The algorithm that was used to segment the data and to calculate speed was modified from [@Laube2011] and based on Algorithms taught in the UZH course: GEO880 Computational Movement Analysis.
+
 
 ```{r}
 library(ggplot2)
@@ -53,8 +63,6 @@ library(ggplot2)
 knitr::kable(head(mtcars))
 ```
 
-<!-- the following is just a placeholder text, remove it!-->
-Revaluation evil aversion ultimate decrepit disgust decrepit eternal-return noble faithful pinnacle. Truth ascetic inexpedient decrepit free. Ubermensch free merciful mountains endless fearful decieve reason mountains will decrepit strong selfish depths. Overcome faith snare gains oneself transvaluation.
 
 ```{r}
 # include plots automatically
@@ -67,11 +75,15 @@ ggplot(mtcars, aes(cyl, disp)) +
 
 
 
-
 ## Material and Methods
+### Data
 
-<!-- the following is just a placeholder text, remove it!-->
-Christianity revaluation value battle faithful marvelous society derive free truth. Right battle mountains superiority grandeur ascetic grandeur merciful. Derive against intentions burying salvation ocean. Right intentions dead victorious ideal spirit evil ultimate joy. Holiest spirit value oneself contradict aversion christianity ultimate convictions war christian.
+The data used for this analysis is cycling data recorded with the movement tracking app POSMO over multiple trips by the author in Switzerland between Würenlos and Altstetten. The GPS data is mostly recorded every 10 seconds and the collection was done on 8 days between April 7th and Mai 21st. The data has been pre-processed, so that only bike trips are shown and only points from bike trips were included. The data is verified, meaning that the GPS location are rather precise and no outliers were found visually. The data was also cropped, so that the home location cannot be exactly determined.
+[image] 
+[summary of dataset]
+To calculate the slope, a Digital Elevation Model (DEM) of Switzerland with a 0.5 meter resolution from swissALTI3D was used. The relevant tiles were hand-picked to cover roughly the same extent as the bike data. This resulted in 190 tiles of 1km x 1km.
+[image]
+
 
 ## Results
 ```{r}
