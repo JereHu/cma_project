@@ -360,7 +360,7 @@ knitr::kable(head(avg_speeds))
 ## Results
 
 
-The results of the summary and the regression (@fig-reg) do not indicate a relationship between speed difference and uphill gradient. With an R-squared value of 0.02, there is no explanation of the variance in speed by the uphill gradient. 
+The results of the summary and the regression (as can be seen in the below and @fig-scatter) do not indicate a relationship between speed difference and uphill gradient. With an R-squared value of 0.02, there is no explanation of the variance in speed by the uphill gradient. 
 H1 has to be rejected, as there is conclusive evidence that the speed difference can not be attributed to the slope gradient.
 
 
@@ -382,9 +382,10 @@ for(i in 2:(nrow(avg_speeds)-1)) {       # for-loop over rows
 ```
 
 
-```{r}
+```{r echo=FALSE,  results='asis'}
 #| label: fig-reg
 #| fig-cap: Overview of regression results.
+
 reg <- lm(avg_speeds$speed_diff~avg_speeds$avg_grad)
 
 #get intercept and slope value
@@ -392,7 +393,10 @@ coeff<-coefficients(reg)
 intercept<-coeff[1]
 slope<- coeff[2]
 
+# library(xtable)
+# knitr::kable(xtable(summary(reg)), format="markdown", align="c")
 summary(reg)
+
 ```
 
 ```{r}
@@ -405,6 +409,7 @@ avg_speeds |>
   # geom_abline(intercept = intercept, slope = slope, color="red", 
   #              linetype="dashed", size=1.5) +
   ylim(0, 15)
+
 
 ```
 
