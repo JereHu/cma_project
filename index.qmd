@@ -1,6 +1,6 @@
 ---
 title: Do cyclists slow down after they go up a steep hill
-subtitle: A self analysis
+subtitle: A self analysis of GPS data
 author: Jeremiah Huggel
 bibliography: cmareferences.bib
 output: html
@@ -362,7 +362,7 @@ knitr::kable(head(avg_speeds, n =3))
 ## Results
 
 
-The results of the summary and the regression (as can be seen below and in @fig-scatter) do not indicate a relationship between speed difference and uphill gradient. With an R-squared value of 0.02 and a p-value of 0.24, there is no explanation of the variance in speed by the uphill gradient. 
+The results of the summary and the regression (as can be seen below and in @fig-scatter) do not indicate a relationship between speed difference and uphill gradient. With an R-squared value of 0.03 and a p-value of 0.24, there is no explanation of the variance in speed by the uphill gradient. 
 
 To check if the method is flawed or if the results are influenced by the choice of gradient for ‘steepness’, two more runs were made, one with a gradient of 5% and with 10% (based roughly on @Winters2016 and @Duc2008).
 The 5% run looks like it has the same issue like the 3% run, with a lot of points having negative speed differences, meaning that the cyclist got faster after a steep part (see @fig-scathist5). It created a similar amount of steep segments that were used for the analysis (49 vs 44), which means that there are not many segments between 3 and 5%. It also had a very low R-squared value of 0.066. The p-value of 0.091 actually tends towards significance, but it is still not statistically conclusive. 
@@ -399,8 +399,8 @@ avg_speeds |>
   ggplot()+
   geom_histogram(aes(speed_diff), binwidth = 2.5)+
   geom_point(aes(speed_diff, avg_grad), color = "darkblue")+
-  # geom_abline(intercept = intercept, slope = slope, color="red", 
-  #              linetype="dashed", size=1.5) +
+  xlab("Speed difference (before - after) [km/h]")+
+  ylab("Average Gradient [%]")+
   ylim(0, 15)
 
 

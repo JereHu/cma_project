@@ -229,8 +229,8 @@ Also check if there are single values that are surrounded by other values => set
 ```{r}
 bike_gradient <- bike_gradient |> 
   mutate(
-    steep_up = gradient_smooth > 5,
-    steep_down = gradient_smooth < -5
+    steep_up = gradient_smooth > 10,
+    steep_down = gradient_smooth < -10
   )
 
 #removing single FALSE/TRUE values
@@ -339,10 +339,9 @@ avg_speeds |>
   ggplot()+
   geom_histogram(aes(speed_diff), binwidth = 2.5)+
   geom_point(aes(speed_diff, avg_grad), color = "darkblue")+
-  # geom_abline(intercept = intercept, slope = slope, color="red", 
-  #              linetype="dashed", size=1.5) +
+  xlab("Speed difference (before - after) [km/h]")+
+  ylab("Average Gradient [%]")+
   ylim(0, 15)
-
 
 
 ```
