@@ -52,7 +52,7 @@ library("cowplot")
 ## Abstract
 
 <!-- the following is just a placeholder text, remove it!-->
-Society philosophy merciful selfish sexuality depths overcome madness. Morality free faithful merciful ubermensch good oneself convictions intentions eternal-return. Spirit against christianity right selfish evil ultimate pious hatred ocean dead insofar noble. Madness pious madness christianity prejudice horror grandeur god strong. Ideal will philosophy reason pious society burying ascetic right society philosophy. Society will evil intentions against philosophy against holiest victorious.
+When a cyclist rides up a hill, they tend to get more tired. Or do they? In this project the author tries to analyse his own data to find out if there is a noticeable and statistically significant effect of steep hills on his riding speed. From his own experience, he does tend to slow down after a hill, but recovers rather quickly. This project tries to lay a framework for using GPS (Global Positioning System) data and Digital Elevation model (DEM) height data to answer this question. It manages to create a framework in R, but it could not answer the question conclusively
 
 
 ## Introduction
@@ -77,7 +77,7 @@ Aggregating this all together, there seems to not be a consent on what is steep 
 ## Material and Methods
 ### Data
 
-The data used for this analysis is cycling data recorded with the movement tracking app POSMO over multiple trips by the author in Switzerland between Würenlos and Altstetten (@fig-dataoverview). The GPS data is mostly recorded every 10 seconds and the collection was done on 8 days between April 7th and Mai 21st. The data has been pre-processed, so that only bike trips are shown and only points from bike trips were included. The data is verified, meaning that the GPS location are rather precise and no outliers were found visually. The data was also cropped, so that the home location cannot be exactly determined.
+The data used for this analysis is cycling data recorded with the movement tracking app POSMO over multiple trips by the author in Switzerland between Würenlos and Altstetten (@fig-dataoverview). The GPS data is recorded every 10 seconds and the data collection was done on 8 days between April 7th and Mai 21st. The data has been pre-processed, so that only longer (around an hour or more) bike trips are included. The data is verified, meaning that the GPS location are rather precise and no outliers were found visually. The data was also cropped, so that the home location cannot be exactly determined.
 ```{r}
 #| label: fig-dataoverview
 #| fig-cap: All routes after pre-processing, displayed by date collected.
@@ -133,7 +133,7 @@ tm_shape(posmo_sf_cut) +
 knitr::kable(head(posmo_sf_cut, n= 3))
 ```
 
-To calculate the slope, a Digital Elevation Model (DEM) of Switzerland with a 0.5 meter resolution from swissALTI3D was used. The relevant tiles were hand-picked (@fig-handpicked) to cover roughly the same extent as the bike data . This resulted in 190 tiles of 1km x 1km.
+To calculate the slope, a Digital Elevation Model (DEM) of Switzerland with a 0.5 meter resolution from swissALTI3D (@swisstopo2021) was used. The relevant tiles were hand-picked (@fig-handpicked) to cover roughly the same extent as the bike data . This resulted in 190 tiles of 1km x 1km.
 
 ![Manually Selected area of Interest on swissALTI3D](images/Screenshot_DEM_selection.jpg){#fig-handpicked}
 
@@ -200,7 +200,7 @@ tm_shape(posmo_sf_cut) +
 The following approach was adopted from @Laube2011. 
 To calculate the speed, a temporal window of 1 was used, this means that the distance for each point was calculated to the one before and after. This distance was then divided by the time difference of these points and multiplied by 3.6 to get kilometers per hour.
 The data was then filtered for points that represent stops in movement (like breaks). In @Laube2011, this was done by comparing average distance within the moving window. For this study, the stop criterion was adapted such that a cyclist stops when the average speed of the current, the previous and next point is less than 1 km/h, or if the distance covered from the last point or to the next point is less than 2 meters. This criterion was empirically tested on the data.
-The points that were determined to be stops where then excluded from the data.
+The points that were determined to be stops where then excluded from the data which resulted in @fig-speed.
 ```{r}
 #| label: fig-speed
 #| fig-cap: Visualization of data points aggregated with the speed attribute in km/h.
@@ -245,7 +245,7 @@ There were some end points of routes that calculated to 400% gradient. Therefore
 
 ![Graphical representation for gradient of point A. Gradient m = x/y * 100. Where x is the distance to the next point, y is the height difference between the points.](images/slope.png){#fig-slopecalc}
 
-This led to the distribution presented on the right in @fig-hist, which looks normally distributed with not many outliers. This would be expected for continuous bike data.
+This led to the distribution presented on the right in @fig-hist, which looks normally distributed with not many outliers, opposed to the figure on the left in @fig-hist. This would be expected for continuous bike data. The gradient added to the data points can be seen in @fig-gradient
 
 ```{r, figures-side, fig.show="hold", out.width="50%"}
 #| label: fig-hist
@@ -286,6 +286,7 @@ tm_shape(bike_gradient) +
   tm_dots("gradient_smooth")
 ```
 
+#### Segmentation
 In a next step, the data was segmented based on a gradient threshold of 3% (@Parkin2010, @Castro2022). To create the segments, a function was used from GEO880. It creates an ID for each point, based on run length encoding from R. A Boolean column was created based on the threshold, one for whether the gradient is steep uphill and one for whether it is steep downhill. In this column, if a point that was steep was followed and preceded by non-steep points, it was also assigned non-steep. In essence, a moving filter was run so that there are no segments that only consist of one point. The ID function then assigns an ID to all True values until there are False values, for which it assigns a new ID and so on. The result of the segmentation can be seen in @fig-segmentup.
 
 ```{r}
@@ -338,6 +339,21 @@ avg_speeds <- bike_gradient |>
     avg_grad = mean(gradient_smooth)
   ) 
 
+#couldn't figure out a working vectorized version.
+#loops over rows, calculates a speed on uphill rows, that are followed and preceded by flat parts
+#doesn't consider the first and last row (due to no preceding/following segments)
+avg_speeds <- avg_speeds |> 
+  mutate(speed_diff = 0)
+
+for(i in 2:(nrow(avg_speeds)-1)) {
+  if (avg_speeds[i, ]$uphill & avg_speeds[i+1, ]$flat & avg_speeds[i-1, ]$flat){
+    avg_speeds[i, ]$speed_diff <- avg_speeds[i-1, ]$seg_avg - avg_speeds[i+1, ]$seg_avg
+  }
+  else {
+    avg_speeds[i, ]$speed_diff <- NA
+  }
+}
+
 knitr::kable(head(avg_speeds, n =3))
 ```
 
@@ -346,26 +362,14 @@ knitr::kable(head(avg_speeds, n =3))
 ## Results
 
 
-The results of the summary and the regression (as can be seen in the below and @fig-scatter) do not indicate a relationship between speed difference and uphill gradient. With an R-squared value of 0.02, there is no explanation of the variance in speed by the uphill gradient. 
+The results of the summary and the regression (as can be seen below and in @fig-scatter) do not indicate a relationship between speed difference and uphill gradient. With an R-squared value of 0.02 and a p-value of 0.24, there is no explanation of the variance in speed by the uphill gradient. 
+
+To check if the method is flawed or if the results are influenced by the choice of gradient for ‘steepness’, two more runs were made, one with a gradient of 5% and with 10% (based roughly on @Winters2016 and @Duc2008).
+The 5% run looks like it has the same issue like the 3% run, with a lot of points having negative speed differences, meaning that the cyclist got faster after a steep part (see @fig-scathist5). It created a similar amount of steep segments that were used for the analysis (49 vs 44), which means that there are not many segments between 3 and 5%. It also had a very low R-squared value of 0.066. The p-value of 0.091 actually tends towards significance, but it is still not statistically conclusive. 
+In the 10% run (@fig-scathist10), the results looked similar to the other two, this time only 23 segments were created, due to the high steepness threshold. 8 of these segments were steeps followed and preceded by flats and therefore used in the linear regression. The R-squared value of 0.073 and p-value of 0.517 also mean that the gradient is not good in explaining the variance in speed difference around the steep parts.
+
+
 H1 has to be rejected, as there is conclusive evidence that the speed difference can not be attributed to the slope gradient.
-
-
-```{r}
-#couldn't figure out a working vectorized version.
-#loops over rows, calculates a speed on uphill rows, that are followed and preceded by flat parts
-#doesn't consider the first and last row (due to no preceding/following segments)
-avg_speeds <- avg_speeds |> 
-  mutate(speed_diff = 0)
-
-for(i in 2:(nrow(avg_speeds)-1)) {       # for-loop over rows
-  if (avg_speeds[i, ]$uphill & avg_speeds[i+1, ]$flat & avg_speeds[i-1, ]$flat){
-    avg_speeds[i, ]$speed_diff <- avg_speeds[i-1, ]$seg_avg - avg_speeds[i+1, ]$seg_avg
-  }
-  else {
-    avg_speeds[i, ]$speed_diff <- NA
-  }
-}
-```
 
 
 ```{r}
@@ -389,11 +393,12 @@ summary(reg)
 
 ```{r}
 #| label: fig-scatter
-#| fig-cap: Scatterplot of Segments that are upward with their gradient and speed-difference of the flat parts before and after.
+#| fig-cap: Scatterplot of the speed difference before and after a steep segment when segmented with a 3% gradient threshold, with a histogram of the speed differences in the back.
 
 avg_speeds |> 
   ggplot()+
-  geom_point(aes(speed_diff, avg_grad))+
+  geom_histogram(aes(speed_diff), binwidth = 2.5)+
+  geom_point(aes(speed_diff, avg_grad), color = "darkblue")+
   # geom_abline(intercept = intercept, slope = slope, color="red", 
   #              linetype="dashed", size=1.5) +
   ylim(0, 15)
@@ -402,13 +407,41 @@ avg_speeds |>
 ```
 
 
+::: {#fig-scathist510 layout-ncol=2}
+
+![5%](images/scatterplot_hist_gradient5.png){#fig-scathist5}
+
+![10%](images/scatterplot_hist_gradient10.png){#fig-scathist10}
+
+Scatterplots of the speed difference before and after a steep segment when segmented with a 5% and 10% gradient threshold, with a histogram of the speed differences in the back.
+:::
+
+
 
 ## Limitations
-This study is limited by the summary of segments. The initial Idea was to treat every point individually and being able to see distinguished speed differences. By summarizing the segments into one average speed and slope, the calculation faster and less complicated, but the results clearly show that the method does not fit the study. The fact that there are a lot of flat segments following steep segments that increase in speed, probably means there is an issue in the methodology.
-There is also a limitation in data availability. With more data, there is a possibility that the trend would be towards more speed difference.
+This study is limited by the summary of segments. The initial Idea was to treat every point individually and being able to see distinguished speed differences. By summarizing the segments into one average speed and slope, the calculation is faster and less complicated, but the results show that the method does not fit the study. The fact that there are a lot of flat segments following steep segments that increase in speed, probably means there is an issue in the methodology. Even if the methodology is fine (which could be the case, but the results are unintuitive), the analysis would be more geared towards the proposed research hypothesis if the speed increase/decrease would be measured for individual points of subsegments. 
+H2 and H3 can not be tested with this approach either.
+
+Another issue is with how the experiment is at the moment, a flat part can be after a steep part and at the same time in front of a steep part. This means that if the cyclist is tired after the first steep part this shows in the speed difference of the first steep part, but then another hill comes and the cyclist might recover only after the second one, which results in the second steep part having a speed increase. When looking at the scatterplots (@fig-scatter, @fig-scathist5, @fig-scathist10) and the data frames, it seems possible that this happens fairly often. At least that is the most obvious explanation in my opinion.
+
+There is also a limitation in data availability. With more data, there is a possibility that the trend would be stronger in either direction. As it stands the data does not have great statistical significance.
+
+One last issue is, that the author had to fulfill their civil duties and went to the military in the last few weeks of the project, which hindered its development.
+
 
 ## Discussion
-The method presented in this study up until the summary of segment data seems robust enough for the application. Gradients are identified correctly, when doing a visual validation with an underlying map. Meaning that the choice of 3% .....
+Segmenting the data worked pretty well. The verification was done visually with @fig-segmentup, where a point can be clicked to see the segment id. Some known points of steepness change were looked at (for 3% gradient threshold segmentation) and it looked very promising. Not a single steepness change was found that does not change the segment. There were very few segments that might have been split too much (e.g. 93-95), but over all there were not many issues. This over-segmentation could have had an influence on the result, but with enough data it should not be significant. 
+
+With multiple runs with varying steepness, there can be two conclusions. One is that the results are true and indicate that cyclists do not tend to slow down after a steep hill. The other is that the method is flawed and would have to be improved to draw a good conclusion from the results. Personally, I tend towards the second one. As there is not much literature on the topic, I will discuss here what I think has to be done to further this research. With more time I could have implemented more of it, but I had to go to the miliary and did not have much free time.
+
+As the main issue seems to be the averaging of speeds and slope gradients and flat segments being potentially both before and after steep segments, the best way to counteract that would be to use the points individually. Maybe there is a way to calculate the speed difference for each point after a steep segment to an average before the segment and if the speed difference turns positive after a few points, the recovery has set in. This could then be used as a point to segment the flat part into ‘after steep’ and ‘before steep’ parts. There could also be a statistic of how long it takes the cyclist to recover and whether there is a fatigue and training effect (H2 and H3).
+
+Before this project was started, it was clear that segmenting in a good way will be the biggest challenge and it did remain it. 
+
+## Conclusion
+This project tried to lay a framework for analysing the speed differences of a cyclist when going over steep hills. It successfully aggregated data from a GPS tracking platform with height data from a high resolution DEM, and calculated speed, gradient and excluded stops.
+It failed in conclusively showing how to define a steep hill, with the most promising statistical results coming from a 5% slope gradient threshold. 
+A plan was formulated how to improve this approach in any future research, but it could not be implemented in time.
 
 
 ### Acknowledgement

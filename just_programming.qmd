@@ -277,7 +277,8 @@ avg_speeds <- bike_gradient |>
     uphill = ifelse(all(steep_up), TRUE, FALSE),
     flat = ifelse(all(!steep_up & !steep_down), TRUE, FALSE),
     downhill = ifelse(all(steep_down), TRUE, FALSE),
-    avg_grad = mean(gradient_smooth)
+    avg_grad = mean(gradient_smooth),
+    avg_height = mean(height)
   ) 
 
 head(avg_speeds, n=3)
@@ -336,13 +337,24 @@ summary(reg)
 ```{r}
 avg_speeds |> 
   ggplot()+
-  geom_point(aes(speed_diff, avg_grad))+
+  geom_histogram(aes(speed_diff), binwidth = 2.5)+
+  geom_point(aes(speed_diff, avg_grad), color = "darkblue")+
   # geom_abline(intercept = intercept, slope = slope, color="red", 
   #              linetype="dashed", size=1.5) +
   ylim(0, 15)
 
+
+
 ```
 
+```{r}
+avg_speeds |> 
+  ggplot(aes(x = 1:nrow(avg_speeds),  y = avg_height))+
+  geom_point(aes(color = uphill), na.rm = TRUE)+
+  geom_line(na.rm = TRUE) +
+  xlab("segment number (based on time)") +
+  ylab("average height per segment [m]")
+```
 
 
 
