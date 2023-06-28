@@ -7,6 +7,9 @@ output: html
 format:
   html:
     code-fold: true
+    code-tools:
+      source: false
+      toggle: true
     toc: true
     toc-depth: 4
     toc-location: left
