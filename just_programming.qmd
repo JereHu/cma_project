@@ -74,6 +74,10 @@ tm_shape(posmo_sf_cut) +
 ```{r}
 head(posmo_sf_cut, n=2)
 ```
+```{r}
+summary(posmo_sf_cut$datetime)
+```
+
 
 Download DEM from many tifs from swisstopo alti3D (csv)
 
