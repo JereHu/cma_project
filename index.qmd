@@ -74,7 +74,7 @@ Aggregating this all together, there seems to not be a consent on what is steep 
 ## Material and Methods
 ### Data
 #### GPS data
-The data used for this analysis is cycling data recorded with the movement tracking app POSMO over multiple trips by the author in Switzerland between Würenlos and Altstetten (@fig-dataoverview). The GPS data is recorded every 10 seconds and the data collection was done on 8 days between April 7th and Mai 21st. The data has been pre-processed, so that only longer (around an hour or more) cycling trips are included. The data is verified, meaning that the GPS location is rather precise and no outliers were found visually. The data was also cropped, so that the home location cannot be exactly determined. This resulted in 2126 data points.
+The data used for this analysis is cycling data recorded with the movement tracking app POSMO over multiple trips by the author in Switzerland between Würenlos and Altstetten (@fig-dataoverview). The GPS data is recorded every 10 seconds and the data collection was done on 8 days between April 7th and Mai 21st. The data has been pre-processed, so that only longer (around an hour or more) cycling trips are included. The data is verified, meaning that the GPS location is rather precise and no outliers were found visually. The data was also cropped, so that the home location cannot be exactly determined. This resulted in 2126 data points (overview in @tbl-overview).
 ```{r}
 #| label: fig-dataoverview
 #| fig-cap: All routes after pre-processing, displayed by date collected.
@@ -242,7 +242,7 @@ There were some end points of routes that calculated to 400% gradient. Therefore
 
 ![Graphical representation for gradient of point A. Gradient m = x/y * 100. Where x is the distance to the next point, y is the height difference between the points.](images/slope.png){#fig-slopecalc}
 
-This led to the distribution presented on the right in @fig-hist, which looks normally distributed with not many outliers, opposed to the figure on the left in @fig-hist. This would be expected for continuous cycling data. The gradient added to the data points can be seen in @fig-gradient
+This led to the distribution presented on the right in @fig-hist, which looks normally distributed with not many outliers, opposed to the figure on the left in @fig-hist. This would be expected for continuous cycling data. The gradient added to the data points can be seen in @fig-gradient.
 
 ```{r, figures-side, fig.show="hold", out.width="50%"}
 #| label: fig-hist
@@ -319,7 +319,7 @@ tm_shape(bike_gradient) +
   tm_dots("segment_id_up") 
 ```
 
-The data was put into a new data frame, by summarizing segments and grouping by uphill and downhill segment ID, which allows a unique distinction between flat, uphill and downhill parts. Then the speed difference between the average speed of a flat part before and a flat part directly after an uphill segment was calculated. To test H1, a regression model was used which tests whether the average gradient of the uphill slope is a good predictor of the speed difference. 
+The data was put into a new data frame, by summarizing segments and grouping by uphill and downhill segment ID, which allows a unique distinction between flat, uphill and downhill parts. Then the speed difference between the average speed of a flat part before and a flat part directly after an uphill segment was calculated (@tbl-new). To test H1, a regression model was used which tests whether the average gradient of the uphill slope is a good predictor of the speed difference. 
 
 
 ```{r}
