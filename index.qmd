@@ -52,6 +52,8 @@ library("ggspatial")
 library("cowplot")
 ```
 
+<div style="text-align: justify">
+
 ## Abstract
 
 <!-- the following is just a placeholder text, remove it!-->
@@ -450,5 +452,4 @@ A plan was formulated how to improve this approach in any future research, but i
 ### Acknowledgement
 Thank you to Nils Ratnaweera. Without him the memory of my laptop would be burnt out and the DEM would not have loaded.
 
-
-## References
+## References 
