@@ -1,6 +1,6 @@
 ---
-title: Do cyclists slow down after they go up a steep hill
-subtitle: A self analysis of GPS data
+title: Analysing steepness induced fatigue in road-bikers
+subtitle: A self-analysis of GPS data
 author: Jeremiah Huggel
 bibliography: cmareferences.bib
 output: html
@@ -437,6 +437,8 @@ With multiple runs with varying steepness, there can be two conclusions. One is 
 As the main issue seems to be the averaging of speeds and slope gradients and flat segments being potentially both before and after steep segments, the best way to counteract that would be to use the points individually. Maybe there is a way to calculate the speed difference for each point after a steep segment to an average before the segment and if the speed difference turns positive after a few points, the recovery has set in. This could then be used as a point to segment the flat part into ‘after steep’ and ‘before steep’ parts. There could also be a statistic of how long it takes the cyclist to recover and whether there is a fatigue and training effect (H2 and H3).
 
 Before this project was started, it was clear that segmenting in a good way will be the biggest challenge and it did remain it. 
+
+When trying to fit this movement pattern, if it can be called that, into the taxonomy of movement patterns as proposed by @Dodge2008, is a bit tricky. It surely belongs to the generic patterns and is likely an isolated object compound pattern as only a single cyclist is researched even if they rarely ever belong to a flock. It could also be called a trend/fluctuation pattern as the change in speed fluctuates after a hill, but was hypothesised to follow a trend. It probably is both and cannot be just attributed to one simple category.
 
 ## Conclusion
 This project tried to lay a framework for analysing the speed differences of a cyclist when going over steep hills. It successfully aggregated data from a GPS tracking platform with height data from a high resolution DEM, and calculated speed, gradient and excluded stops.
