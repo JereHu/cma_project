@@ -56,7 +56,6 @@ library("cowplot")
 
 ## Abstract
 
-<!-- the following is just a placeholder text, remove it!-->
 When a cyclist rides up a hill, they tend to get more tired. Or do they? In this project the author tries to analyse his own data to find out if there is a noticeable and statistically significant effect of steep hills on his riding speed. From his own experience, he does tend to slow down after a hill, but recovers rather quickly. This project tries to lay a framework for using GPS (Global Positioning System) data and Digital Elevation model (DEM) height data to answer this question. The project manages to create a framework in R, but it could not answer the question conclusively.
 
 
@@ -64,12 +63,14 @@ When a cyclist rides up a hill, they tend to get more tired. Or do they? In this
 
 When cycling in Switzerland, hills are omnipresent and going up- or downhill is nearly inevitable. Cyclists therefore go up and down which influences their efficiency, with steep gradients of more than 10-15% being less efficient than walking [@Ardigo2003]. The author of this paper was interested whether cyclists slow down after a steep hill and whether they speed up again after a while. This seemed logical to the author, mainly due to his own experiences.
 
-This led to the following Research Question and Hypothesis: 
+This led to the following Research Question and Hypotheses: 
 
-* RQ: Do cyclists slow down after a steep part of their route compared to just before the steep part? 
-  * H1: They tend to get slower after a steep part. 
-  * H2: They recover after a while to the level before the steep part, but eventually there is a fatigue effect over one  journey.
-  * H3: There is a training effect over multiple journeys.
+| RQ: Do cyclists slow down after a steep segment of their route compared to just
+|        before the steep segment?
+| H1: They tend to get slower after a steep segment. 
+| H2: They recover after a while to the level before the steep segment, but 
+|        eventually there is a fatigue effect over one journey. 
+| H3: There is a training effect over multiple journeys. 
 
 To explore this Research Question, a movement analysis was performed in R.
 According to a preliminary literature review, there has not been much research on the topic of steep gradients for cyclists in the GIS field. @Parkin2010 refer to steep gradients for cyclists starting from 3% slope, where the cyclists mean speed starts to fall off and the slope is ‘being felt’. @Castro2022 expanded on @Parkin2010 idea, but they were more interested in acceleration over the gradient than in the speed after the gradient. Their simulation results show that some cyclists have enough power to maintain their speed over long uphill stretches, but they also note that this would not be expected in real-life scenarios. @Winters2016 used a gradient in their cycling score calculations, but only considered 2-10% as differentiated gradients. It is not stated whether this was due to the study area or other factors, but it means that more than 10% is deemed as hard as it gets. Similarly, @Cho1999 describe a slope of 0-15% in their study on gear ratios, but do not elaborate why they chose that range, implying that above 15% there is not much difference for their system. Even considering papers from Kinesiology and Physiology ([@Duc2008]; [@Swinnen2022]) there seems to not be a consent on what is considered steep. 
@@ -155,7 +156,7 @@ The DEM height attribute was then extracted and added to the cycling data points
 ```{r}
 #| results: false
 #| label: fig-raster
-#| fig-cap: 190 tiles of DEM displayed together.
+#| fig-cap: 190 tiles of DEM of the study area displayed together, showing height in meters above sea level.
 
 #csv has all download paths from alti3d tiles  https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html 
 all_tif <- read.csv("datasets/alti3D_all.csv", header = FALSE)
@@ -186,7 +187,7 @@ plot(virt_rast)
 
 ```{r}
 #| label: fig-height
-#| fig-cap: Visualization of data points aggregated with height attribute in meters from DEM.
+#| fig-cap: Visualization of data points aggregated with height attribute in meters above sea level from DEM.
 
 DEM <- extract(virt_rast, posmo_sf_cut)
 
